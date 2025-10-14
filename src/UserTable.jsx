@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./UserTable.css"; 
 
+// այս կոմպոնենտն պետք է ստեզծել այստեզ՝ src/components/Usertable/index.tsx file-ում
 class UserTable extends Component {
     constructor(props) {
         super(props);
@@ -62,6 +63,8 @@ class UserTable extends Component {
                     onChange={this.handleSearch}
                 />
                 <button onClick={this.handleSort}>
+
+                    //  լոգիկան չպետք է գրենք return-ի մեջ
                     Sort ({sortBy === "asc" ? "A–Z" : "Z–A"})
                 </button>
                 <table>
@@ -73,6 +76,8 @@ class UserTable extends Component {
                         </tr>
                     </thead>
                     <tbody>
+
+                        // սրան նույնպես կարելի է վերագրել փոփոխական և գրել return-ից վերև
                         {filteredUsers.map((user) => (
                             <tr key={user.id}>
                                 <td>{user.name}</td>
